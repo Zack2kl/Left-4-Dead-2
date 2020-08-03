@@ -1,5 +1,5 @@
 local GetLocalPlayer, CurTime, FilledRect, Color, max = entities.GetLocalPlayer, globals.CurTime, draw.FilledRect, draw.Color, math.max
-local IN_RELOAD, max_time, next_attack, gotten = (1 >> 0), 0, 0, false
+local max_time, next_attack, gotten = 0, 0, false
 
 callbacks.Register('Draw', function()
 	local local_player = GetLocalPlayer()
@@ -12,8 +12,7 @@ callbacks.Register('Draw', function()
 		return
 	end
 
-	local in_reload = weapon:GetPropInt('m_bInReload') & IN_RELOAD == 1
-	if not in_reload then
+	if not weapon:GetPropBool('m_bInReload') then
 		gotten = false
 		return
 	end
