@@ -20,7 +20,6 @@ local function air()
 
 	local str = 'Airstuck: '.. (air_stuck and 'ON' or 'OFF')
 	local tW = GetTextSize(str)
-	print(tW.. '-'.. str)
 
 	TextShadow(x-(tW*0.5), y, str)
 	s = s + 12
@@ -38,7 +37,6 @@ local function speed()
 
 	local str = 'Speedhack: '.. (IsButtonDown(key) and 'ON' or 'OFF')
 	local tW = GetTextSize(str)
-	print(tW.. '-'.. str)
 
 	TextShadow(x-(tW*0.5), y+s, str)
 	s = s + 12
@@ -52,7 +50,6 @@ local function lag()
 
 	local str = 'Lag Exploit: '.. (IsButtonDown(key) and 'ON' or 'OFF')
 	local tW = GetTextSize(str)
-	print(tW.. '-'.. str)
 
 	TextShadow(x-(tW*0.5), y+s, str)
 	s = s + 12
