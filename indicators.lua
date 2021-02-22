@@ -1,10 +1,9 @@
 local GetLocalPlayer, IsButtonDown, GetValue, TextShadow, GetScreenSize, GetTextSize = entities.GetLocalPlayer, input.IsButtonDown, gui.GetValue, draw.TextShadow, draw.GetScreenSize, draw.GetTextSize
-local air_stuck, pressed = false, false
+local air_stuck, pressed, s = false, false, 0
 local x, y
-local s = 0
 
 local function air()
-	local key = GetValue('msc_airstuck')
+	local key = GetValue('misc.exploits.airstuck')
 	if key == 0 then
 		return
 	end
@@ -26,11 +25,11 @@ local function air()
 end
 
 local function speed()
-	if not GetValue('msc_speedhack_enable') then
+	if not GetValue('misc.speedhack.enable') then
 		return
 	end
 
-	local key = GetValue('msc_speedhack_key')
+	local key = GetValue('misc.speedhack.key')
 	if key == 0 then
 		return
 	end
@@ -43,7 +42,7 @@ local function speed()
 end
 
 local function lag()
-	local key = GetValue('msc_lagexploit')
+	local key = GetValue('misc.exploits.lag')
 	if key == 0 then
 		return
 	end
